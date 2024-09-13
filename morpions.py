@@ -1,13 +1,13 @@
-from tkinter import *
+import tkinter as tk
 import random
 ####################
 # Création fenêtre #
 ####################
 
-root = Tk()
+root = tk.Tk()
 root.title("Morpions")
-root.geometry("600x600")
-zone = Canvas(root, width=600, height= 600, bg="white")
+root.geometry("800x600")
+zone = tk.Canvas(root, width=600, height= 600, bg="white")
 zone.place(x=0,y=0)
 
 
@@ -51,7 +51,7 @@ def attendre_clic (jeu, event ,marque):
     yclic=event.y
     vainqueur=0
     if victory == False and notfull==True:
-        dessin_jeton(xclic, yclic,joueur)
+        dessin_jeton(xclic, yclic,"""joueur""")
         print("clic")
     for i in range(jeu):
         for j in range (jeu):
@@ -82,7 +82,7 @@ i,j=0,0
 #######################
 # PROGRAMME PRINCIPAL #
 #######################
-joueur = int(input("choisissez croix(1) ou rond(2) "))
+# joueur = int(input("choisissez croix(1) ou rond(2) "))
 
 dessin_grille()
 
